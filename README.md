@@ -1,5 +1,6 @@
 # LBImageCarouselView
-图片轮播器，用Collection实现，支持自定义轮播页Cell  
+图片轮播器，只要一句代码就可以创建一个轮播器，可以自定义轮播器大小  
+用Collection实现，支持自定义轮播页Cell 
 
 
 属性：  
