@@ -46,6 +46,6 @@
       
       timeInterval: 自动翻页的速度，每timeInterval秒翻动一次  
       
-     
+     调用此初始化方法，填入参数 即可创建轮播器了
      > - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval;  
  - 
