@@ -46,6 +46,8 @@
       
       timeInterval: 自动翻页的速度，每timeInterval秒翻动一次  
       如果timeInterval 小于1秒将不会自动滚动
+      如果不想设置轮播器自动滚动，将timeInterval设置为任意一个小于1的数即可
+      
       setCellModelBlock：在此block中给轮播器的Cell 设置Model
       
      调用此初始化方法，填入参数 即可创建轮播器了
