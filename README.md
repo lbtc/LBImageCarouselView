@@ -1,4 +1,6 @@
-# LBImageCarouselView 图片轮播器
+# LBImageCarouselView 图片轮播器  
+![image](https://github.com/lbtc/LBImageCarouselView/blob/master/说明图片.gif)  
+
 图片轮播器，只要一句代码就可以创建一个轮播器，可以自定义轮播器大小  
 用Collection实现，支持自定义轮播页Cell 
 
@@ -31,12 +33,19 @@
       
       modelArray: 装cell模型的数组  
       
-      cellClassName: 自定义的cell的类名  
+      cellClassName: 自定义的cell的类名 用来作为cell的复用ID
       
-      cellType: 用何种方式自定义的cell  
+      cellType: 用何种方式自定义的cell 
+      可选的cellType类型：
+      //以何种方式创建的cell  
+      typedef enum{
+          LBCording = 1,//纯代码
+          LBXib,//xib
+          LBStoryboard//storyboard
+      }LBCellType;
       
       timeInterval: 自动翻页的速度，每timeInterval秒翻动一次  
       
-     
+     调用此初始化方法，填入参数 即可创建轮播器了
      > - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval;  
  - 
