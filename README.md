@@ -45,7 +45,19 @@
       }LBCellType;
       
       timeInterval: 自动翻页的速度，每timeInterval秒翻动一次  
+      如果timeInterval 小于1秒将不会自动滚动
+      setCellModelBlock：在此block中给轮播器的Cell 设置Model
       
      调用此初始化方法，填入参数 即可创建轮播器了
-     > - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval;  
+     - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval AndSetingCellModel:(sendBlock)setCellModelBlock;
+     
+只需要此一句代码就可以创建图片轮播器了：   
+
+      LBImageCarouselView *imageCarouseView = [[LBImageCarouselView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300) AndWithModelArray:self.modelArray AndWithClassNameOfCell:@"LBImageCell" AndWithCellType:LBCording AndWithTimeInterval:2.0f AndSetingCellModel:^(id cell, id model) {
+              LBImageCell *imageCell = (LBImageCell *)cell;
+              LBImageModel *imageModel = (LBImageModel *)model;
+              imageCell.imageModel = imageModel;
+          }];
+      //将轮播器添加到父控件上  
+      [self.view addSubview:imageCarouseView];
  - 
