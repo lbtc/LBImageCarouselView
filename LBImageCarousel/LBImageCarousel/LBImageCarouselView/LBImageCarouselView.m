@@ -99,11 +99,17 @@
 #pragma mark- 处理定时器滚动图片的方法
 //添加定时器
 - (void)addTimer{
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:_timeInterval target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    if (self.timeInterval < 1) {
+        return;
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:_timeInterval target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 //移除定时器
 - (void)removeTimer{
+    if (self.timeInterval < 1) {
+        return;
+    }
     [self.timer invalidate];
     self.timer = nil;
 }

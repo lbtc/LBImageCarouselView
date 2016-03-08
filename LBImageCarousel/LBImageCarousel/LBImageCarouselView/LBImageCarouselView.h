@@ -34,7 +34,9 @@ typedef void(^sendBlock)(id cell,id model);
  modelArray: 装cell模型的数组
  cellClassName: 自定义的cell的类名
  cellType: 用何种方式自定义的cell
- timeInterval: 自动翻页的速度，每timeInterval秒翻动一次
+ timeInterval: 自动翻页的速度，每timeInterval秒翻动一次 
+ 如果timeInterval 小于1秒将不会自动滚动
+ setCellModelBlock：在此block中给轮播器的Cell 设置Model
  */
 - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval AndSetingCellModel:(sendBlock)setCellModelBlock;
 @end
