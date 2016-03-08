@@ -42,6 +42,7 @@
     NSArray *cellClassNameArr = @[@" ",@"LBImageCell",@"LBXibImageCell",@"LBStoryboardCell"];
     
     //创建轮播器,在代码，xib，storyboard三种方式中选择一种
+    //如果不想设置轮播器自动滚动，将timeInterval设置为任意一个小于1的数即可
     LBImageCarouselView *imageCarouseView = [[LBImageCarouselView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300) AndWithModelArray:self.modelArray AndWithClassNameOfCell:cellClassNameArr[CELLTYPE] AndWithCellType:CELLTYPE AndWithTimeInterval:2.0f AndSetingCellModel:^(id cell, id model) {
         LBImageCell *imageCell = (LBImageCell *)cell;
         LBImageModel *imageModel = (LBImageModel *)model;

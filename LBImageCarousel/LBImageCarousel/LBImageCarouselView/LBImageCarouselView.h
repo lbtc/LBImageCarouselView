@@ -36,6 +36,7 @@ typedef void(^sendBlock)(id cell,id model);
  cellType: 用何种方式自定义的cell
  timeInterval: 自动翻页的速度，每timeInterval秒翻动一次 
  如果timeInterval 小于1秒将不会自动滚动
+ 如果不想设置轮播器自动滚动，将timeInterval设置为任意一个小于1的数即可
  setCellModelBlock：在此block中给轮播器的Cell 设置Model
  */
 - (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval AndSetingCellModel:(sendBlock)setCellModelBlock;
