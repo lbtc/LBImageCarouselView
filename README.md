@@ -33,9 +33,16 @@
       
       modelArray: 装cell模型的数组  
       
-      cellClassName: 自定义的cell的类名  
+      cellClassName: 自定义的cell的类名 用来作为cell的复用ID
       
-      cellType: 用何种方式自定义的cell  
+      cellType: 用何种方式自定义的cell 
+      可选的cellType类型：
+      //以何种方式创建的cell  
+      typedef enum{
+          LBCording = 1,//纯代码
+          LBXib,//xib
+          LBStoryboard//storyboard
+      }LBCellType;
       
       timeInterval: 自动翻页的速度，每timeInterval秒翻动一次  
       
