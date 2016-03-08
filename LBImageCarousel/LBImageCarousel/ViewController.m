@@ -42,11 +42,15 @@
     NSArray *cellClassNameArr = @[@" ",@"LBImageCell",@"LBXibImageCell",@"LBStoryboardCell"];
     
     //创建轮播器,在代码，xib，storyboard三种方式中选择一种
-    LBImageCarouselView *imageCarouseView = [[LBImageCarouselView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300) AndWithModelArray:self.modelArray AndWithClassNameOfCell:cellClassNameArr[CELLTYPE] AndWithCellType:CELLTYPE AndWithTimeInterval:2.0f];
+    LBImageCarouselView *imageCarouseView = [[LBImageCarouselView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 300) AndWithModelArray:self.modelArray AndWithClassNameOfCell:cellClassNameArr[CELLTYPE] AndWithCellType:CELLTYPE AndWithTimeInterval:2.0f AndSetingCellModel:^(id cell, id model) {
+        LBImageCell *imageCell = (LBImageCell *)cell;
+        LBImageModel *imageModel = (LBImageModel *)model;
+        imageCell.imageModel = imageModel;
+    }];
     
     //将pageControl放到轮播器上，让轮播器滚动和pageControl同步
     imageCarouseView.pageControl = _pageControl;
-    //给轮播器中的cell传对应的model
+    //也可以通过此block，给轮播器中的cell重新设置对应的model
     imageCarouseView.setCellModelBlock = ^(id cell,id model){
         [self settingCellWithCell:cell Model:model AndCellType:CELLTYPE];
     };

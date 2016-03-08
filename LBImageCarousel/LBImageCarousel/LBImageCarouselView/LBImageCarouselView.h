@@ -36,5 +36,5 @@ typedef void(^sendBlock)(id cell,id model);
  cellType: 用何种方式自定义的cell
  timeInterval: 自动翻页的速度，每timeInterval秒翻动一次
  */
-- (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval;
+- (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval AndSetingCellModel:(sendBlock)setCellModelBlock;
 @end

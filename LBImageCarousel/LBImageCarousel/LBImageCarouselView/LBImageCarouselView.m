@@ -25,7 +25,7 @@
 @implementation LBImageCarouselView
 
 #pragma mark- 初始化设置方法
-- (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval{
+- (instancetype)initWithFrame:(CGRect)frame AndWithModelArray:(NSArray *)modelArray AndWithClassNameOfCell:(NSString *)cellClassName AndWithCellType:(LBCellType)cellType AndWithTimeInterval:(NSTimeInterval)timeInterval AndSetingCellModel:(sendBlock)setCellModelBlock{
     if (self = [super initWithFrame:frame collectionViewLayout:self.flowLayout]) {
         //存储模型数据
         _modelArray = modelArray;
@@ -40,6 +40,8 @@
         [self scrollToFirstItem];
         //添加定时器使图片默认自动滚动
         [self addTimer];
+        //设置cell Model 的 block
+        self.setCellModelBlock = setCellModelBlock;
     }
     return self;
 }
