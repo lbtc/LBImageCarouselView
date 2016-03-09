@@ -2,7 +2,6 @@
 //  LBImageCell.m
 //  图片轮播器
 //
-//  Created by 李斌 on 15/11/26.
 //  Copyright © 2015年 Libin. All rights reserved.
 //
 
@@ -18,7 +17,9 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc] init];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:_imageView];
+        self.backgroundColor = [UIColor colorWithRed:172/255.0 green:172/255.0 blue:172/255.0 alpha:0.25];
     }
     return self;
 }
